@@ -1,3 +1,6 @@
+#include <string>
+#include "TreeNode.hpp"
+
 // Avl tree of character as key and int as value
 // will have int align with index 
 namespace AvlTree
@@ -5,17 +8,16 @@ namespace AvlTree
 
   class TreeMap
   {
-    public:
+    private:
       int size;
-    
+      AvlTree::TreeNode* root;
 
-    // clear
-    // heap
-    // add
-    // peek min priority
-    // remove min priority
-    // change priority
-    // 
-
+    public:
+      TreeMap();
+      void clear();
+      bool containsKey(std::string key);
+      int put(std::string key, int value);
+      int get(std::string key);
+      int remove(std::string key);
   };
 }
