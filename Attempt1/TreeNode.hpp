@@ -25,6 +25,7 @@ namespace AvlTree
       void setRight(TreeNode* r);
       TreeNode** getRight();
       std::string toString();
+      void free();
   };
 
 }

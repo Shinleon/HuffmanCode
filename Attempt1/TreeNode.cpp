@@ -72,16 +72,3 @@ namespace AvlTree
     return ret + "}";
   }
 }
-
-#include <iostream>
-/*int main()
-{
-  AvlTree::TreeNode* m = new AvlTree::TreeNode("hello", 2);
-  AvlTree::TreeNode* m_l = new AvlTree::TreeNode("hellno", 2);
-  m->setLeft(m_l);
-  std::cout << (*m).toString() + "\n"; 
-  delete m;
-  delete m_l;
-  std::cout << std::string("hello").compare(std::string("no"));
-  return 0;
-}*/
