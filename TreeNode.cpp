@@ -11,8 +11,10 @@ namespace AvlTree
   {
     this->data = data;
     this->index = index;
-    this->left = nullptr;
-    this->right = nullptr;
+    this->left = (TreeNode**)malloc(sizeof(TreeNode**));
+    *(this->left) = nullptr;
+    this->right = (TreeNode**)malloc(sizeof(TreeNode**));
+    *(this->right) = nullptr;
   }
 
   std::string TreeNode::getData()
@@ -37,20 +39,20 @@ namespace AvlTree
 
   void TreeNode::setLeft(TreeNode* l)
   {
-    this->left = l;
+    *(this->left) = l;
   }
 
-  TreeNode* TreeNode::getLeft()
+  TreeNode** TreeNode::getLeft()
   {
     return this->left;
   }
   
   void TreeNode::setRight(TreeNode* r)
   {
-    this->right = r;
+    *(this->right) = r;
   }
 
-  TreeNode* TreeNode::getRight()
+  TreeNode** TreeNode::getRight()
   {
     return this->right;
   }
@@ -59,20 +61,20 @@ namespace AvlTree
   {
     std::string ret = "Data: " + this->data;
     ret += ", Index: " + std::to_string(this->index) + " {";
-    if(this->left != nullptr)
+    if(*(this->left) != nullptr)
     {
-      ret += "Left: " + this->left->toString() + " ";
+      ret += "Left: " + (*this->left)->toString() + " ";
     }
-    if(this->right != nullptr)
+    if(*(this->right) != nullptr)
     {
-      ret += "Right: " + this->right->toString();
+      ret += "Right: " + (*this->right)->toString();
     }
     return ret + "}";
   }
 }
 
 #include <iostream>
-int main()
+/*int main()
 {
   AvlTree::TreeNode* m = new AvlTree::TreeNode("hello", 2);
   AvlTree::TreeNode* m_l = new AvlTree::TreeNode("hellno", 2);
@@ -82,4 +84,4 @@ int main()
   delete m_l;
   std::cout << std::string("hello").compare(std::string("no"));
   return 0;
-}
+}*/

@@ -10,8 +10,8 @@ namespace AvlTree
     private:
       std::string data;
       int index;
-      TreeNode* left;
-      TreeNode* right;
+      TreeNode** left;
+      TreeNode** right;
       
     public:
       //constructor
@@ -21,9 +21,9 @@ namespace AvlTree
       void setData(std::string data);
       void setIndex(int index);
       void setLeft(TreeNode* l);
-      TreeNode* getLeft();
+      TreeNode** getLeft();
       void setRight(TreeNode* r);
-      TreeNode* getRight();
+      TreeNode** getRight();
       std::string toString();
   };
 

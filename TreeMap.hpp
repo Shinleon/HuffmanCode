@@ -10,7 +10,7 @@ namespace AvlTree
   {
     private:
       int size;
-      AvlTree::TreeNode* root;
+      AvlTree::TreeNode** root;
 
     public:
       TreeMap();
@@ -19,5 +19,6 @@ namespace AvlTree
       int put(std::string key, int value);
       int get(std::string key);
       int remove(std::string key);
+      std::string toString();
   };
 }
