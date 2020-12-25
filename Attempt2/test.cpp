@@ -21,6 +21,7 @@ class Point2D
       double sqrdy = pow(this->y - other->getY(), 2);
       return sqrt(sqrdx + sqrdy);
     }
+    // https://stackoverflow.com/questions/56477772/c-when-to-use-an-in-front-of-an-operator-overloading-function
     Point2D operator +(Point2D& other)
     {
       Point2D ret;
