@@ -7,8 +7,8 @@ namespace Huffman
     private:
       std::string key; // The character sequence to compress
       long frequency;  // The frequency of the character sequence
-      PriorityNode* left;
-      PriorityNode* right;
+      PriorityNode** left =  new PriorityNode*;
+      PriorityNode** right =  new PriorityNode*;
     
     public:
       PriorityNode(std::string k, long f): frequency(f), key(k){};
