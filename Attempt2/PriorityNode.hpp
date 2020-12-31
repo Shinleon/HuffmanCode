@@ -1,5 +1,6 @@
 #include <string>
 #include <cstdlib>
+#include <memory>
 
 #ifndef PRIORITY_NODE
 #define PRIORITY_NODE
@@ -11,8 +12,8 @@ namespace Huffman
     private:
       std::string key; // The character sequence to compress
       long frequency = 0;  // The frequency of the character sequence
-      PriorityNode* left = (PriorityNode*)malloc(sizeof(PriorityNode));
-      PriorityNode* right = (PriorityNode*)malloc(sizeof(PriorityNode));
+      std::shared_ptr<PriorityNode> left;
+      std::shared_ptr<PriorityNode> right;
     
     public:
       //Defined
@@ -20,8 +21,8 @@ namespace Huffman
       PriorityNode(std::string k, long f): frequency(f), key(k){};
       std::string getKey() const{ return key;}
       long getFrequency() const{ return frequency;}
-      void setLeft(const PriorityNode& left){*this->left = left;}
-      void setRight(const PriorityNode& right){*this->right = right;}
+      void setLeft(const std::shared_ptr<PriorityNode> left){this->left = left;}
+      void setRight(const std::shared_ptr<PriorityNode> right){this->right = right;}
       PriorityNode& getLeft() const{ return *left;}
       PriorityNode& getRight() const{ return *right;}
 
