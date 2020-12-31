@@ -14,7 +14,6 @@ namespace Huffman
      return ret;
    };
 
-
   bool operator > (const PriorityNode& lhs, const PriorityNode& rhs)
   {
     return lhs.getFrequency() > rhs.getFrequency();
